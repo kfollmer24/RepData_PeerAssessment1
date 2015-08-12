@@ -15,10 +15,13 @@ output:
 
 
 ## What is mean total number of steps taken per day?
+First, I calculate the sum of steps by the different dates. Then I plot that information on a histogram. Lastly, I calculated some summary statistics
 ```{r stepSummary}
-    hist(dat_clean$steps, xlab = "Steps Taken", main = "Histogram of Steps")
-    mean(dat_clean$steps)
-    median(dat_clean$steps)
+    d1 <- aggregate(dat_clean$steps,list(date=dat_clean$date),sum)
+    as.numeric(d1$x)
+    hist(d1$x, xlab = "Total Steps", main = "Histogram of Total Steps Taken by Day Total")
+    mean(d1$x)
+    median(d1$x)
 
 ```
 

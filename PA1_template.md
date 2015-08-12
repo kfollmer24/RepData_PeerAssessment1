@@ -11,27 +11,41 @@
 
 
 ## What is mean total number of steps taken per day?
+First, I calculate the sum of steps by the different dates. Then I plot that information on a histogram. Lastly, I calculated some summary statistics
 
 ```r
-    hist(dat_clean$steps, xlab = "Steps Taken", main = "Histogram of Steps")
+    d1 <- aggregate(dat_clean$steps,list(date=dat_clean$date),sum)
+    as.numeric(d1$x)
+```
+
+```
+##  [1]   126 11352 12116 13294 15420 11015 12811  9900 10304 17382 12426
+## [12] 15098 10139 15084 13452 10056 11829 10395  8821 13460  8918  8355
+## [23]  2492  6778 10119 11458  5018  9819 15414 10600 10571 10439  8334
+## [34] 12883  3219 12608 10765  7336    41  5441 14339 15110  8841  4472
+## [45] 12787 20427 21194 14478 11834 11162 13646 10183  7047
+```
+
+```r
+    hist(d1$x, xlab = "Total Steps", main = "Histogram of Total Steps Taken by Day Total")
 ```
 
 ![](PA1_template_files/figure-html/stepSummary-1.png) 
 
 ```r
-    mean(dat_clean$steps)
+    mean(d1$x)
 ```
 
 ```
-## [1] 37.3826
+## [1] 10766.19
 ```
 
 ```r
-    median(dat_clean$steps)
+    median(d1$x)
 ```
 
 ```
-## [1] 0
+## [1] 10765
 ```
 
 ## What is the average daily activity pattern?

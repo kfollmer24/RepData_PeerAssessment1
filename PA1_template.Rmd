@@ -17,8 +17,8 @@ output:
 ## What is mean total number of steps taken per day?
 ```{r stepSummary}
     hist(dat_clean$steps, xlab = "Steps Taken", main = "Histogram of Steps")
-    meanSteps <- mean(dat_clean$steps)
-    medSteps <- median(dat_clean$steps)
+    mean(dat_clean$steps)
+    median(dat_clean$steps)
 
 ```
 

@@ -19,8 +19,19 @@
 ![](PA1_template_files/figure-html/stepSummary-1.png) 
 
 ```r
-    meanSteps <- mean(dat_clean$steps)
-    medSteps <- median(dat_clean$steps)
+    mean(dat_clean$steps)
+```
+
+```
+## [1] 37.3826
+```
+
+```r
+    median(dat_clean$steps)
+```
+
+```
+## [1] 0
 ```
 
 ## What is the average daily activity pattern?
